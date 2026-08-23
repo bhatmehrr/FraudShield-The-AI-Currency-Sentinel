@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Fraudshield: The AI currency sentinel - Login</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../static/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="../static/css/tooplate-little-fashion.css" rel="stylesheet">
+
+        <style>
+            /* Add custom CSS for compact layout */
+            .login-section {
+                padding: 30px 0;
+            }
+            .login-container {
+                background-color: rgba(255, 255, 255, 0.9); /* semi-transparent background */
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(50, 50, 50, 0.1);
+            }
+            .header-image {
+                background: url('../static/images/header/money4.jpg') center center / cover no-repeat;
+                height: 400px; /* Adjust to keep the image smaller */
+                position: relative;
+            }
+            .header-title {
+                position: absolute;
+                bottom: 50px;
+                left: 20px;
+                background: rgba(0, 0, 0, 0);
+                padding: 10px;
+                color: #ffffff;
+                border-radius: 5px;
+            }
+            body {
+                background-color: #f4f4f4;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!-- Main Content -->
+        <main>
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                       
+                    </a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('first')}}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('login')}}">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header Image with Title -->
+            <header class="header-image">
+                <div class="header-title">
+                    <h2 style="color: #ffffff">Fraudshield: The AI Currency Sentinel</h2>
+
+                </div>
+            </header>
+
+            <!-- Login Form Section -->
+            <section class="login-section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4 login-container">
+                            <div class="text-center mb-4">
+                                <h2>Login</h2>
+                            </div>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="uname" class="form-label"><b>Username</b></label>
+                                    <input type="text" id="uname" name="uname" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pwd" class="form-label"><b>Password</b></label>
+                                    <input type="password" id="pwd" name="pwd" class="form-control" required>
+                                </div>
+                                <div class="text-center">
+                                    <input type="button" class="btn btn-primary" value="Login" onclick="login()">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <!--footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p class="text-muted">Real/Fake Indian Currency Detection © 2024</p>
+                    </div>
+                </div>
+            </div>
+        </footer-->
+
+        <!-- JavaScript Files -->
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/bootstrap.bundle.min.js"></script>
+        <script src="../static/js/custom.js"></script>
+
+        <!-- Login Script -->
+        <script>
+            function login() {
+                var uname = document.getElementById("uname").value;
+                var pwd = document.getElementById("pwd").value;
+                if (uname === "admin" && pwd === "admin") {
+                    alert("Login Success!");
+                    window.location = "{{ url_for('index') }}";
+                } else {
+                    alert("Invalid Credentials!");
+                }
+            }
+        </script>
+    </body>
+</html>

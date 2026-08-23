@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Fraudshield: The AI currency sentinel</title>
+
+    <!-- CSS Files -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/slick.css" />
+    <link href="../static/css/tooplate-little-fashion.css" rel="stylesheet">
+
+    <style>
+        /* Reduce image header size */
+        .site-header {
+            background-image: url('../static/images/header/money14.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 250px;
+            position: relative;
+        }
+
+        /* Overlay for better text contrast */
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Ensure content is centered and text is readable */
+        .site-header h2 {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            font-size: 2em;
+            padding-top: 80px;
+        }
+
+        .contact {
+            padding: 20px 0;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .prediction-section {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .upload-section {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        /* Compact footer */
+        .site-footer {
+            padding: 20px 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <section class="preloader">
+        <div class="spinner">
+            <span class="sk-inner-circle"></span>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="first.html">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('first') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('index') }}">Prediction</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('performance') }}">Performance Analysis</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header Section -->
+        <header class="site-header">
+            <h2>Real/Fake Indian Currency Detection using CNN</h2>
+        </header>
+
+        <!-- Prediction Section -->
+        <section class="contact section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% if prediction %}
+                        <div class="prediction-section text-center">
+                            <img src="{{ img_path }}" class="img-fluid mb-4" style="max-width: 100%; height: auto; max-height: 200px;">
+                            <h3 style="font-size: 1.5em; font-weight: 700; color: #333;">Real/Fake Currency Prediction:</h3>
+                            <p style="font-size: 1.5em; color: #007bff; font-weight: 600;"><i><u>{{ prediction }}</i></u></p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="upload-section">
+                    <h4 style="margin-top: 5px; font-size: 1.2em;">Want to try another image?</h4>
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3" style="font-size: 0.8em; padding: 5px 10px;">Upload Another Image</a>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <!--footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Fake Currency Detection. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/Headroom.js"></script>
+    <script src="../static/js/jQuery.headroom.js"></script>
+    <script src="../static/js/slick.min.js"></script>
+    <script src="../static/js/custom.js"></script>
+</body>
+
+</html>
